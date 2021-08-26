@@ -203,9 +203,11 @@ likely move to OpenBMC-specific names.
 These three dbus calls (`AssignEndpoint`, `LearnEndpoint` and `SetupEndpoint`)
 provide facilities for applications to trigger enumeration of new hardware
 endpoints. All three take the same set of arguments to specify the new endpoint
-to discover: yisb `AssignEndpoint` `s:: interface` `ay:: physaddr` yisb
-`LearnEndpoint` `s:: interface` `ay:: physaddr` yisb `SetupEndpoint` `s::
-interface` `ay:: physaddr`
+to discover:
+
+ * `yisb AssignEndpoint(s:: interface, ay:: physaddr)`
+ * `yisb LearnEndpoint(s:: interface, ay:: physaddr)`
+ * `yisb SetupEndpoint(s::interface, ay:: physaddr)`
 
 On a successful probe of the specified address, all three return the following
 data:
